@@ -2,10 +2,10 @@
 def valid_move?(board, index)
 	space = index.to_i - 1
 	if !position_taken?(board, space) && space.between?(0,8)
-		  false
+		  true
 
 	else
-		true
+		false
 
   end
 end
