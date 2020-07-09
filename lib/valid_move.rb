@@ -1,22 +1,24 @@
 # code your #valid_move? method here
-def valid_move?(board, index)
+def valid_move?(board, position)
+	spot = position.to_i - 1
+	if !position_taken?(board, spot) && spot.between?(0,8)
+		true
 
- if position_taken?
-   true
+	else
+		false
 
+	end
 
-
-
-
-end
 end
 
 # re-define your #position_taken? method here, so that you can use it in the #valid_move? method above.
-def position_taken?(board, index)
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-(board[index] ==  " " || board[index] == "" || board[index] == nil) ?
- false : true
+def position_taken?(board, position)
+  if board[position] == " " || board[position] == "" || board[position] == nil
+  	false
 
+  else
+  	true
 
-end
-position_taken?(board, index)
+  end
+
+end 
